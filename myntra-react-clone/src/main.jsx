@@ -7,6 +7,8 @@ import {RouterProvider,createBrowserRouter} from "react-router-dom"
 import Bags from './routes/Bags.jsx'
 import Home from './routes/Home.jsx'
 import myntraStore from './store/index.js'
+// Import all of Bootstrap's CSS
+import "bootstrap/dist/css/bootstrap.css"
 const router= createBrowserRouter([
   {
     path:"/",

@@ -1,8 +1,11 @@
 import {BsFillPersonFill} from "react-icons/bs"
 import {FaFaceGrinHearts,FaBagShopping} from "react-icons/fa6"
 import { Link } from "react-router-dom"
+import {useSelector} from "react-redux"
 const Header=()=>{
-    return <header>
+    const bag=useSelector((store)=>store.bag)
+    return (
+    <header>
     <div className="logo_container">
         <Link to="/"><img className="myntra_home" src="images/myntra_logo.webp" alt="Myntra Home"/></Link>
     </div>
@@ -32,9 +35,10 @@ const Header=()=>{
         <Link to="/bag" className="action_container">
         <FaBagShopping/>
             <span className="action_name">Bag</span>
-            <span className="bag-item-count">0</span>
+            <span className="bag-item-count">{bag.length}</span>
         </Link>
     </div>
 </header>
+);
 }
 export default Header;

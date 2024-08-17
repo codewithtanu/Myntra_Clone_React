@@ -3,10 +3,12 @@ import HomeItem from "../components/HomeItem"
 
 const Home=()=>{
   const items=useSelector(store=>store.items)
+  //console.log("home",items)
     return(
     <main>
     <div className="items-container">
-      {items.map(item=><HomeItem key={item.id} item={item}/>)}
+      {items.map((item)=>(
+      <HomeItem key={item.id} item={item}/>))}
     </div>
 </main>
     )
